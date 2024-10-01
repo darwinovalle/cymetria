@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Table</title>
+    <style type="text/css">
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .ajedrez {
+            width: 800px;
+            height: 800px;
+            border: 2px solid black;         
+        }
+
+        .cuadro_blanco {
+            background-color: rgb(253, 227, 187);
+            width: 100px;
+            height: 100px;
+        }
+
+        .cuadro_negro {
+            background-color: black;
+            width: 100px;
+            height: 100px;
+        }
+        .line1{
+            position: relative;
+            left: 0px;
+            top:0px;
+        }
+
+        .line2{
+            position: relative;
+            left: 100px;
+            top: -100%;
+        }
+        .line3 {
+            position: relative;
+            left: 200px;
+            top: -200%;
+        }
+        .line4{
+            position: relative;
+            left: 300px;
+            top: -300%;
+        }
+        .line5{
+            position: relative;
+            left: 400px;
+            top: -400%;
+        }
+        .line6{
+            position: relative;
+            left: 500px;
+            top: -500%;
+        }
+        .line7{
+            position: relative;
+            left: 600px;
+            top: -600%;
+        }
+        .line8{
+            position: relative;
+            left: 700px;
+            top: -700%;
+        }
+
+        #F5{
+            background-color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="ajedrez">
+        <div class="line1">
+            <div class="cuadro_blanco" id="A8" ></div>
+            <div class="cuadro_negro" id="A7"></div>
+            <div class="cuadro_blanco" id="A6"></div>
+            <div class="cuadro_negro" id="A5"></div>
+            <div class="cuadro_blanco" id="A4"></div>
+            <div class="cuadro_negro" id="A3"></div>
+            <div class="cuadro_blanco" id="A2"></div>
+            <div class="cuadro_negro" id="A1"></div>
+        </div>
+        <div class="line2">
+            <div class="cuadro_negro" id="B8"></div>
+            <div class="cuadro_blanco" id="B7"></div>
+            <div class="cuadro_negro" id="B6"></div>
+            <div class="cuadro_blanco" id="B5"></div>
+            <div class="cuadro_negro" id="B4"></div>
+            <div class="cuadro_blanco" id="B3"></div>
+            <div class="cuadro_negro" id="B2"></div>
+            <div class="cuadro_blanco" id="B1"></div>
+        </div>
+            <div class="line3">
+            <div class="cuadro_blanco" id="C8"></div>
+            <div class="cuadro_negro" id="C7"></div>
+            <div class="cuadro_blanco" id="C6"></div>
+            <div class="cuadro_negro" id="C5"></div>
+            <div class="cuadro_blanco" id="C4"></div>
+            <div class="cuadro_negro" id="C3"></div>
+            <div class="cuadro_blanco" id="C2"></div>
+            <div class="cuadro_negro" id="C1"></div>
+        </div>
+        <div class="line4">
+            <div class="cuadro_negro" id="D8"></div>
+            <div class="cuadro_blanco" id="D7"></div>
+            <div class="cuadro_negro" id="D6"></div>
+            <div class="cuadro_blanco" id="D5"></div>
+            <div class="cuadro_negro" id="D4"></div>
+            <div class="cuadro_blanco" id="D3"></div>
+            <div class="cuadro_negro" id="D2"></div>
+            <div class="cuadro_blanco" id="D1"></div>
+        </div>
+        <div class="line5">
+            <div class="cuadro_blanco" id="E8"></div>
+            <div class="cuadro_negro" id="E7"></div>
+            <div class="cuadro_blanco" id="E6"></div>
+            <div class="cuadro_negro" id="E5"></div>
+            <div class="cuadro_blanco" id="E4"></div>
+            <div class="cuadro_negro" id="E3"></div>
+            <div class="cuadro_blanco" id="E2"></div>
+            <div class="cuadro_negro" id="E1"></div>
+        </div>
+        <div class="line6">
+            <div class="cuadro_negro" id="F8"></div>
+            <div class="cuadro_blanco" id="F7"></div>
+            <div class="cuadro_negro" id="F6"></div>
+            <div class="cuadro_blanco" id="F5"></div>
+            <div class="cuadro_negro" id="F4"></div>
+            <div class="cuadro_blanco" id="F3"></div>
+            <div class="cuadro_negro" id="F2"></div>
+            <div class="cuadro_blanco" id="F1"></div>
+            
+        </div>
+        <div class="line7">
+            <div class="cuadro_blanco" id="G8"></div>
+            <div class="cuadro_negro" id="G7"></div>
+            <div class="cuadro_blanco" id="G6"></div>
+            <div class="cuadro_negro" id="G5"></div>
+            <div class="cuadro_blanco" id="G4"></div>
+            <div class="cuadro_negro" id="G3"></div>
+            <div class="cuadro_blanco" id="G2"></div>
+            <div class="cuadro_negro" id="G1"></div>
+        </div>
+        <div class="line8">
+            <div class="cuadro_negro" id="H8"></div>
+            <div class="cuadro_blanco" id="H7"></div>
+            <div class="cuadro_negro" id="H6"></div>
+            <div class="cuadro_blanco" id="H5"></div>
+            <div class="cuadro_negro" id="H4"></div>
+            <div class="cuadro_blanco" id="H3"></div>
+            <div class="cuadro_negro" id="H2"></div>
+            <div class="cuadro_blanco" id="H1"></div>
+        </div>
+
+        
+    </div>
+    
+</body>
+</html>
