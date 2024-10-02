@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primer codigo en javascript</title>
+    <style></style>
+    <script>
+        function sumar(){
+            let variable1 = parseFloat(document.getElementById('val1').value);
+            let variable2 = parseFloat(document.getElementById('val2').value);
+            let suma = variable1 + variable2;
+            document.getElementById('resultado').innerHTML = `La suma de los numeros ${variable1} y ${variable2} es igual a: ${suma}`;
+        }
+    </script>
+</head>
+<body>
+    <!-- here we use an event on the input instead of the normal button-->
+    <label>numero 1</label>
+    <input type="text" id="val1" oninput="sumar()">
+    <label for="">numero 2</label>
+    <input type="text" id="val2" oninput="sumar()">
+
+    <p id="resultado"></p>
+    
+</body>
+</html>

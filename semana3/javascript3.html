@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primer codigo en javascript</title>
+    <style></style>
+    <script>
+        function onFocus1(){
+            document.getElementById('resultado').textContent = "estas escribiendo el primer numbero"
+        }
+        function onFocus2(){
+            document.getElementById('resultado').textContent = "estas escribiendo el segundo numbero"
+        }
+            
+        function sumar(){
+            let variable1 = parseFloat(document.getElementById('val1').value);
+            let variable2 = parseFloat(document.getElementById('val2').value);
+            
+            if(!isNaN(variable1) && !isNaN(variable2)){
+                let suma = variable1 + variable2;
+                document.getElementById('resultado').innerHTML = `La suma de los numeros ${variable1} y ${variable2} es igual a: ${suma}`;
+            }else{
+                document.getElementById('resultado').textContent = "Por favor ingrese un numero"
+            }
+            
+        }
+
+        
+    </script>
+</head>
+<body>
+    <!-- here we use an event on the input instead of the normal button-->
+    <label>numero 1</label>
+    <input type="text" id="val1" onfocus="onFocus1()" oninput="sumar()">
+    <label for="">numero 2</label>
+    <input type="text" id="val2" onfocus="onFocus2()" oninput="sumar()">
+
+    <p id="resultado"></p>
+    
+</body>
+</html>
