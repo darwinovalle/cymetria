@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Descuentos Tienda de Dulces</title>
+    <style>
+
+        body {font-family: Arial, Helvetica, sans-serif; background-color: #f0f0f0; margin: 50px; }
+
+        h1 {color: #333;}
+
+        input, button {padding: 10px; margin: 5px 0;}
+
+        .resultado {margin-top: 20px; font-weight: bold;}
+
+    </style>
+
+</head>
+<body>
+    <div class="container-fluid bg-dark">
+        <h1>Calculadora de Descuentos Tienda de Dulces</h1>
+
+    </div>
+    <form id="formularioDeDescuentos">
+
+        <label for="cantidad">Cantidad de dulces:</label>
+        <input type="number" id="cantidad" required>
+        <br>
+        <br>
+        <button type="submit">Calcular Precio</button>
+    </form>
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+
+        document.getElementById('formularioDeDescuentos').addEventListener('submit', function(event){
+            event.preventDefault();
+            let cantidadDeDulces = parseInt(document.getElementById('cantidad').value);
+
+            let precioPorDulce = 1500;
+
+            let precioFinal;
+
+            if (cantidadDeDulces > 20) {
+                let descuento = 0.20;
+                let precioFinal = cantidadDeDulces * precioPorDulce * (1 - descuento);
+                document.getElementById('resultado').textContent = `Has recibido un 20% de descuento. El precio final es : $ ${precioFinal.toFixed(2)}`;
+            } else if (cantidadDeDulces > 10) {
+                let descuento = 0.10;
+                let precioFinal = cantidadDeDulces * precioPorDulce * (1 - descuento);
+                document.getElementById('resultado').textContent = `Has recibido un 10% de descuento. El precio final es : $ ${precioFinal.toFixed(2)}`;
+            } else {
+                precioFinal = cantidadDeDulces * precioPorDulce;
+                document.getElementById('resultado').textContent = `No hay descuento. El precio final es: $ ${precioFinal.toFixed(2)}`
+            }
+        })
+  
+    </script>
+    
+</body>
+</html>
