@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> </title>
+    <script>
+        const xmlUrl = 'estudiante.xml';
+        async function cargarEstudiantes(){
+            try{
+                const response = await fetch(xmlUrl);
+                const xmlText = await response.text();
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+
+                const estudiantes = xmlDoc.getElementsByTagName('item');
+
+                let totalEstudiantes = estudiantes.length;
+
+                let html = '<ul>'
+
+                for(let i =0 ; i < totalEstudiantes ; i++){
+                    const nombre = estudiantes[i].getElementsByTagName('nombre')[0].textContent;
+                    const apellido = estudiantes[i].getElementsByTagName('apellido')[0].textContent;
+                    const correo = estudiantes[i].getElementsByTagName('correo')[0].textContent;
+                    const edad = estudiantes[i].getElementsByTagName('edad')[0].textContent;
+
+                    html += `
+                        <li>
+                            <strong>Nombre:</strong> ${nombre}<br>
+                            <strong>Apellido:</strong> ${apellido}<br>
+                            <strong>Correo:</strong> ${correo}<br>
+                            <strong>Edad:</strong> ${edad}<br>
+                            
+                    `;
+                }
+                html += "</ul>"
+
+                document.getElementById('estudiantes-container').innerHTML = html;
+
+            }
+            catch {
+                console.error('error al cargar el xml', error)
+            }
+        }
+        cargarEstudiantes();
+    </script>
+</head>
+<body>
+    <h1>Lista de estudiantes</h1>
+    <div id="estudiantes-container"></div>
+    
+</body>
+</html>

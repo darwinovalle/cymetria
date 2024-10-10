@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML de EL TIEMPO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .rss-item {
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            padding: 10px;
+        }
+        .rss-item h2 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .rss-item p {
+            margin: 5px 0;
+        }
+    </style>
+    <script type="text/javascript">
+        const rssUrl = "https://api.allorigins.win/get?url=" + encodeURIComponent("https://www.eltiempo.com/rss/colombia.xml");
+
+        async function consultaRSS() {
+            try {
+                const response = await fetch(rssUrl);
+                const data = await response.json();
+                const xmlText = data.contents;
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+                const items = xmlDoc.querySelectorAll('item');
+                
+                const container = document.getElementById('rss-container'); // Get the container
+
+                items.forEach((item) => {
+                    const title = item.querySelector('title')?.textContent;
+                    const pubDate = item.querySelector('pubDate')?.textContent;
+                    const link = item.querySelector('link')?.textContent;
+                    const description = item.querySelector('description')?.textContent;
+                    const image = item.querySelector('enclosure')?.getAttribute('url');
+
+                    // Create a new div for each RSS item
+                    const itemDiv = document.createElement('div');
+                    itemDiv.classList.add('rss-item');
+                    
+                    // Populate the itemDiv with content
+                    itemDiv.innerHTML = `
+                        <h2><a href="${link}" target="_blank">${title}</a></h2>
+                        <p><strong>Published:</strong> ${pubDate}</p>
+                        <p>${description}</p>
+                        ${image ? `<img src="${image}" alt="Image" style="max-width: 100%;">` : ''}
+                    `;
+
+                    // Append the itemDiv to the container
+                    container.appendChild(itemDiv);
+                });
+            } catch (error) {
+                console.log(`error ${error}`);
+            }
+        }
+
+        consultaRSS();
+    </script>
+</head>
+<body>
+    <h1>RSS Feed from EL TIEMPO</h1>
+    <div id="rss-container"></div> <!-- Container for RSS items -->
+</body>
+</html>

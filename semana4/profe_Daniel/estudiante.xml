@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<estudiantes>
+    <item>
+        <nombre>Alexis</nombre>
+        <apellido>García</apellido>
+        <correo>alucard19012010@gmail.com</correo>
+        <edad>31</edad>
+    </item>
+    <item>
+        <nombre>Michael</nombre>
+        <apellido>Quiceno</apellido>
+        <correo>mikequiceno@hotmail.com</correo>
+        <edad>19</edad>
+    </item>
+    <item>
+        <nombre>Cristhian</nombre>
+        <apellido>Rosas</apellido>
+        <correo>cristian.rosas.010@gmail.com</correo>
+        <edad>25</edad>
+    </item>
+    <item>
+        <nombre>Miguel</nombre>
+        <apellido>Mayorga</apellido>
+        <correo>mimayorcetina71@hotmail.com</correo>
+        <edad>29</edad>
+    </item>
+    <item>
+        <nombre>Arnold</nombre>
+        <apellido>Alape</apellido>
+        <correo>arnoldguti7@gmail.com</correo>
+        <edad>23</edad>
+    </item>
+
+</estudiantes>
